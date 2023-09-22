@@ -108,10 +108,9 @@ public class tema20 extends BaseTest {
         Thread.sleep(3000);
         assertEquals("https://keybooks.ro/checkout/", driver.getCurrentUrl());
 
-        WebElement bill = driver.findElement(By.cssSelector("h3:contains('Billing details')"));
-        //WebElement addition =
-
-                      //  <h3>Billing details</h3>
-                      //  <h3>Additional information</h3>
+        WebElement bill = driver.findElement(By.cssSelector("div.woocommerce-billing-fields>h3:first-of-type"));
+        WebElement addition = driver.findElement(By.cssSelector("div.woocommerce-additional-fields>h3:first-of-type"));
+        assertTrue(bill.isDisplayed());
+        assertTrue(addition.isDisplayed());
     }
 }
